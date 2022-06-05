@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Card, Button, ListGroup } from "react-bootstrap";
 
-function Profile() {
-  const handle = "https://api.github.com/users/howtoduck";
+const Profile = (props) => {
+  const handle = "https://api.github.com/users/" + props.name;
   const [Gitinfo, setGitinfo] = useState();
 
   useEffect(() => {
@@ -53,6 +53,6 @@ function Profile() {
       </Card>
     </div>
   );
-}
+};
 
 export default Profile;
