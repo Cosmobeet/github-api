@@ -6,7 +6,6 @@ import { Form, Button, FloatingLabel } from "react-bootstrap";
 
 function SearchBar() {
   const [name, setName] = useState("");
-
   const handleSubmit = (event) => {
     event.preventDefault();
     const githandle = `${name}`;
@@ -18,6 +17,10 @@ function SearchBar() {
     );
     ReactDOM.render(element, document.getElementById("root"));
   };
+
+  function refreshPage() {
+    window.location.reload();
+  }
 
   return (
     <Form onSubmit={handleSubmit} className="bg-light">
@@ -35,6 +38,9 @@ function SearchBar() {
           />
           <Button size="sm" variant="primary" type="submit">
             Submit
+          </Button>
+          <Button size="sm" variant="primary" onClick={refreshPage}>
+            Reset
           </Button>
         </FloatingLabel>
       </Form.Group>
