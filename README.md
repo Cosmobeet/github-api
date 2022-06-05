@@ -1,6 +1,34 @@
-# Getting Started with Create React App
+# Github API
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Using ReactJS and axios to access Github's public REST API
+
+## Installation
+
+Clone this repository
+
+```bash
+git clone https://github.com/howtoduck/github-api
+```
+
+Install axios
+
+```bash
+npm install axios
+
+```
+
+Install react-bootstrap
+```bash
+npm install react-bootstrap bootstrap
+```
+
+## Usage
+
+1. Built / Run with 'npm start' script
+2. Enter github username into the searchbar and submit
+3. Use reset button to search for another github username
+
+-------------------------------------------
 
 ## Available Scripts
 
