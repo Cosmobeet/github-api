@@ -11,6 +11,13 @@ function Profile() {
     // .then((data) => console.log(data.data));
   }, []);
 
+  const userWebsite = () => {
+    window.open(`${Gitinfo.blog}`);
+  };
+  const userGithub = () => {
+    window.open(`${Gitinfo.html_url}`);
+  };
+
   if (!Gitinfo) return "";
 
   return (
@@ -33,8 +40,12 @@ function Profile() {
             </ListGroup>
             {Gitinfo.bio}
           </Card.Text>
-          <Button size="sm">Website</Button>
-          <Button size="sm">Github</Button>
+          <Button size="sm" onClick={userWebsite}>
+            Website
+          </Button>
+          <Button size="sm" onClick={userGithub}>
+            Github
+          </Button>
         </Card.Body>
         <Card.Footer className="text-muted">
           Public Repositories: {Gitinfo.public_repos}
