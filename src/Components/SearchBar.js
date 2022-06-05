@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { useState } from "react";
 import Profile from "./Profile";
+import UserRepos from "./UserRepos";
 import { Form, Button, FloatingLabel } from "react-bootstrap";
 
 function SearchBar() {
@@ -13,6 +14,7 @@ function SearchBar() {
       <>
         <SearchBar />
         <Profile name={githandle} />
+        <UserRepos name={githandle} />
       </>
     );
     ReactDOM.render(element, document.getElementById("root"));
