@@ -6,9 +6,13 @@ import UserRepos from "./UserRepos";
 import { Form, Button, FloatingLabel } from "react-bootstrap";
 
 function SearchBar() {
+  //Initializing useState
   const [name, setName] = useState("");
+
+  //Saves the name variable as githandle and sends the prop to Profile and UserRepo components
   const handleSubmit = (event) => {
     event.preventDefault();
+    //alert(`The username entered was: ${name}`);
     const githandle = `${name}`;
     const element = (
       <>
@@ -20,6 +24,7 @@ function SearchBar() {
     ReactDOM.render(element, document.getElementById("root"));
   };
 
+  //Reload page
   function refreshPage() {
     window.location.reload();
   }

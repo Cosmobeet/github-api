@@ -3,21 +3,29 @@ import axios from "axios";
 import { Card, Button, ListGroup } from "react-bootstrap";
 
 const Profile = (props) => {
+  //Using prop from SearchBar to store username information
   const handle = "https://api.github.com/users/" + props.name;
+
+  //Initializing useState for API call
   const [Gitinfo, setGitinfo] = useState();
 
+  //Retrieve API infromation
   useEffect(() => {
     axios.get(handle).then((data) => setGitinfo(data.data));
     // .then((data) => console.log(data.data));
   }, []);
 
-  const userWebsite = () => {
+  //Button to open user's listed website page
+  const myWebsite = () => {
     window.open(`${Gitinfo.blog}`);
   };
-  const userGithub = () => {
+
+  //Button to open user's github page
+  const myGithub = () => {
     window.open(`${Gitinfo.html_url}`);
   };
 
+  //Returns nothing/empty if there is no information yet
   if (!Gitinfo) return "";
 
   return (
@@ -40,10 +48,10 @@ const Profile = (props) => {
             </ListGroup>
             {Gitinfo.bio}
           </Card.Text>
-          <Button size="sm" onClick={userWebsite}>
+          <Button size="sm" onClick={myWebsite}>
             Website
           </Button>
-          <Button size="sm" onClick={userGithub}>
+          <Button size="sm" onClick={myGithub}>
             Github
           </Button>
         </Card.Body>

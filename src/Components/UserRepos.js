@@ -3,14 +3,19 @@ import axios from "axios";
 import { Table } from "react-bootstrap";
 
 const UserRepos = (props) => {
+  //Using prop from SearchBar to store username information
   const handle = "https://api.github.com/users/" + props.name + "/repos";
+
+  //Initializing useState for API call
   const [Gitrepo, setGitrepo] = useState();
 
+  //Retrieve API infromation
   useEffect(() => {
     axios.get(handle).then((data) => setGitrepo(data.data));
     // .then((data) => console.log(data.data));
   }, []);
 
+  //Returns nothing/empty if there is no information yet
   if (!Gitrepo) return "";
 
   return (
