@@ -17,8 +17,10 @@ function SearchBar() {
     const element = (
       <>
         <SearchBar />
-        <Profile name={githandle} />
-        <UserRepos name={githandle} />
+        <div class="content-container">
+          <Profile name={githandle} />
+          <UserRepos name={githandle} />
+        </div>
       </>
     );
     ReactDOM.render(element, document.getElementById("root"));
@@ -31,10 +33,13 @@ function SearchBar() {
 
   return (
     <Form onSubmit={handleSubmit} className="bg-light">
-      <Form.Group className="mb-3">
-        <Form.Label size="sm">Enter Github Username</Form.Label>
-        <FloatingLabel label="Username" className="mb-3">
+      <Form.Group>
+        <Form.Label size="sm" className="pt-2 pb-2 font-weight-bold">
+          Enter Github Username
+        </Form.Label>
+        <FloatingLabel className="pb-2" label="Username">
           <Form.Control
+            className="mb-2"
             aria-label="Username"
             aria-describedby="basic-addon1"
             type="text"

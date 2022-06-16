@@ -19,32 +19,34 @@ const UserRepos = (props) => {
   if (!Gitrepo) return "";
 
   return (
-    <Fragment>
-      <Table striped bordered hover responsive size="sm" bg-light>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Created</th>
-            <th>Last Updated</th>
-            <th>Link</th>
-          </tr>
-        </thead>
-        <tbody>
-          {Gitrepo.map((item, index) => (
-            <tr key={item.id}>
-              <td>{index}</td>
-              <td>{item.name}</td>
-              <td>{item.created_at}</td>
-              <td>{item.updated_at}</td>
-              <td>
-                <a href={item.html_url}>Link</a>
-              </td>
+    <div class="repo-table">
+      <Fragment>
+        <Table striped bordered hover responsive size="sm" bg-light>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Created</th>
+              <th>Last Updated</th>
+              <th>Link</th>
             </tr>
-          ))}
-        </tbody>
-      </Table>
-    </Fragment>
+          </thead>
+          <tbody>
+            {Gitrepo.map((item, index) => (
+              <tr key={item.id}>
+                <td>{index}</td>
+                <td>{item.name}</td>
+                <td>{item.created_at}</td>
+                <td>{item.updated_at}</td>
+                <td>
+                  <a href={item.html_url}>Link</a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </Fragment>
+    </div>
   );
 };
 
