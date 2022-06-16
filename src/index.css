@@ -27,10 +27,11 @@ form {
     padding-top: 1rem;
   }
   .profile {
-    flex: 2;
+    flex: 1;
+    align-items: top;
   }
   .repo-table {
-    flex: 8;
+    flex: 9;
     margin: 0.5rem;
   }
 }

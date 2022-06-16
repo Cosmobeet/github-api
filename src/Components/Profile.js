@@ -29,7 +29,7 @@ const Profile = (props) => {
   if (!Gitinfo) return "";
 
   return (
-    <div className="profile justify-content-center align-items-center d-flex bg-light">
+    <div className="profile justify-content-center align-items-top bg-light">
       <Card className="bg-light" style={{ width: "18rem" }}>
         <Card.Header>Github User</Card.Header>
         <Card.Img variant="top" src={Gitinfo.avatar_url} />
