@@ -7,7 +7,7 @@ Using ReactJS and axios to access Github's public REST API
 Clone this repository
 
 ```bash
-git clone https://github.com/howtoduck/github-api
+git clone https://github.com/cosmobeet/github-api
 ```
 
 Install axios
